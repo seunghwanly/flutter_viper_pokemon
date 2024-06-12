@@ -1,8 +1,25 @@
 a simple Flutter app used [VIPER](https://medium.com/@pinarkocak/understanding-viper-pattern-619fa9a0b1f1) architecture.
 
+<img src="https://img.shields.io/badge/Flutter%20-%2302569B.svg?&style=for-the-badge&logo=Flutter&logoColor=white" />
+
 ## Purpose
 
 Understand a VIPER architecture, separated by features.
+
+``` mermaid
+---
+title: VIPER Architecture
+---
+stateDiagram-v2
+    View --> Presenter: actions/listen
+    Presenter --> Interactor: fetch/update data
+    Presenter --> View: update(notify)
+    Presenter --> Router
+    Interactor --> Entity
+    Interactor --> Presenter: entity
+```
+
+
 
 - **V**iew
   - Shows data to user.
@@ -67,3 +84,12 @@ each feature has to implement all from `entity` to `view`.
 every layer has interface to communicate between each layers.
 
 > in *View*, skipped `displayData` due to `provider` provides `notifyListeners()` to handle changes.
+
+## Screenshots 📷
+
+<img width="360" alt="Pokemon List Screen" src="https://github.com/seunghwanly/flutter_viper_pokemon/assets/22142225/a559bc4b-eed9-476e-bbbb-152ffefa6c4d">
+<img width="360" alt="Pokemon Detail Screen" src="https://github.com/seunghwanly/flutter_viper_pokemon/assets/22142225/28f5a728-a141-4699-98b3-74a39fbba9e4">
+
+## Nice to have
+
+Create a *Builder* to take dependency injections and insert the Widgets to Widget Tree by each screens.
