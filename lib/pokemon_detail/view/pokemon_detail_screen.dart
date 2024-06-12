@@ -28,7 +28,7 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen>
     final PokemonDetailPresenterImpl presenter =
         context.read<PokemonDetailPresenterImpl>();
 
-    /// 데이터 받아오기
+    /// Fetch data
     presenter.getPokemonDetail(widget.name);
 
     presenter.errorStreamController.stream.listen(
@@ -59,7 +59,7 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen>
         builder: (context) {
           if (pokemonDetail == null) {
             return const Center(
-              child: Text('포켓몬 정보를 찾을 수 없어요 :('),
+              child: Text('Not Found :('),
             );
           }
 
@@ -71,7 +71,7 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                /// 이미지
+                /// Image
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: Image.network(
@@ -86,7 +86,7 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen>
                   ),
                 ),
 
-                /// 그 외 이미지
+                /// Extra Images
                 SizedBox.fromSize(
                   size: const Size.fromHeight(128),
                   child: ListView.builder(
@@ -105,7 +105,7 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen>
                 ),
                 const SizedBox(height: 12),
 
-                /// 기본 정보
+                /// Information
                 ListTile(
                   leading: const Text('Name'),
                   title: Text(pokemonDetail.name),
@@ -124,10 +124,10 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen>
                 ),
                 const SizedBox(height: 12),
 
-                /// 스탯
+                /// Stats
                 const Padding(
                   padding: EdgeInsets.all(16),
-                  child: Text('STATS📊'),
+                  child: Text('STATS 📊'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16),
@@ -144,10 +144,10 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen>
                 ),
                 const SizedBox(height: 12),
 
-                /// 능력
+                /// abilities
                 const Padding(
                   padding: EdgeInsets.all(16),
-                  child: Text('ABILITIES💪'),
+                  child: Text('ABILITIES 💪'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16),
@@ -163,10 +163,10 @@ class _PokemonDetailScreenState extends State<PokemonDetailScreen>
                 ),
                 const SizedBox(height: 12),
 
-                /// 움직임
+                /// Moves
                 const Padding(
                   padding: EdgeInsets.all(16),
-                  child: Text('MOVES💨'),
+                  child: Text('MOVES 💨'),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16),

@@ -4,7 +4,6 @@ import 'package:flutter_viper_pokemon/pokemon_detail/repository/model/pokemon_de
 import 'package:flutter_viper_pokemon/util.dart';
 
 abstract class PokemonDetailRepository {
-  /// 포켓몬 이름으로 조회
   Future<Result<PokemonDetailModel, String>> getPokemonDetail(
     String name,
   );

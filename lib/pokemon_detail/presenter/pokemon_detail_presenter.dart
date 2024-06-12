@@ -8,7 +8,6 @@ import 'package:flutter_viper_pokemon/util.dart';
 abstract class PokemonDetailPresenter {
   PokemonDetailEntity? get pokemonDetail;
 
-  /// 포켓몬 이름으로 조회
   Future<void> getPokemonDetail(String name);
 }
 

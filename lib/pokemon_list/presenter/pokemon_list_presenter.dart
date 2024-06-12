@@ -13,7 +13,6 @@ abstract class PokemonListPresenter {
 
   String? get next;
 
-  /// 포켓몬 리스트 불러오기
   Future<void> getPokemons();
 
   Future<void> onRoute(

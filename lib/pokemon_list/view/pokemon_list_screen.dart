@@ -5,7 +5,6 @@ import 'package:flutter_viper_pokemon/util.dart';
 import 'package:provider/provider.dart';
 
 abstract class PokemonListView {
-  ///  에러 메시지를 보여주는 메소드
   void displayError(String message);
 }
 
@@ -27,7 +26,7 @@ class _PokemonListScreenState extends State<PokemonListScreen>
     final PokemonListPresenterImpl presenter =
         context.read<PokemonListPresenterImpl>();
 
-    /// 데이터 받아오기
+    /// Fetch data
     presenter.getPokemons();
 
     presenter.errorStreamController.stream.listen(
@@ -47,7 +46,7 @@ class _PokemonListScreenState extends State<PokemonListScreen>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pokemon List'),
+        title: const Text('Pokemons'),
       ),
       body: RefreshIndicator.adaptive(
         onRefresh: presenter.getPokemons,
@@ -66,7 +65,7 @@ class _PokemonListScreenState extends State<PokemonListScreen>
                 return const Padding(
                   padding: EdgeInsets.all(8),
                   child: Text(
-                    '모두 확인했어요!',
+                    'Done!',
                     textAlign: TextAlign.center,
                   ),
                 );
@@ -76,9 +75,7 @@ class _PokemonListScreenState extends State<PokemonListScreen>
 
               return ListTile(
                 onTap: () {
-                  // TODO(seunghwanly): navigate to detail screen (PRESENTER)
                   if (name.isEmpty) return;
-                  debugPrint(name);
                   presenter.onRoute(context, name);
                 },
                 title: Text(name),

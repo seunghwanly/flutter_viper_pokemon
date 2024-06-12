@@ -14,7 +14,7 @@ import 'package:provider/provider.dart';
 void main() {
   final Dio dio = Dio();
 
-  /// PokemonList 의존성 주입
+  /// [PokemonList] DI
   final PokemonListRepository pokemonListRepository = PokemonListRepositoryImpl(
     dio,
   );
@@ -56,7 +56,7 @@ class PokemonApp extends StatelessWidget {
 
           final Dio dio = Dio();
 
-          /// PokemonDetail 의존성 주입
+          /// [PokemonDetail] DI
           final PokemonDetailRepository pokemonDetailRepository =
               PokemonDetailRepositoryImpl(
             dio,

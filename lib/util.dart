@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
-/// 데이터 레이어(서버/로컬)에서 받아오는 데이터에 대한 처리
+/// Use this class to return the result of an asynchronous operation.
 class Result<T extends Object?, E> {
   const Result({
     this.data,
@@ -32,7 +32,7 @@ class ResultException<E> implements Exception {
   }
 }
 
-/// [dio] 패키지 [Response] 클래스에 대한 확장
+/// [dio] package [Response] extension
 extension ResponseExtension on Response {
   bool get isOk => statusCode != null && statusCode! ~/ 100 == 2;
 }

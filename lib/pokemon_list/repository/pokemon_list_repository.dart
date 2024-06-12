@@ -4,12 +4,11 @@ import 'package:flutter_viper_pokemon/pokemon_list/repository/model/pokemon_mode
 import 'package:flutter_viper_pokemon/util.dart';
 
 abstract class PokemonListRepository {
-  /// 의존성 주입을 위한 [Dio] 객체 파라미터
   const PokemonListRepository(Dio dio);
 
-  /// [Result]의 [data]에는 [PokemonModel] 리스트와 이전/다음 페이지 URL이 포함됩니다.
-  /// - $1: [List<PokemonModel>] 포켓몬 리스트
-  /// - $2: [String?] 다음 페이지 URL
+  /// - $1: [List<PokemonModel>] data
+  /// - $2: [String?] previous
+  /// - $3: [String?] next
   Future<Result<(List<PokemonModel>, String?, String?), String>> getPokemons({
     String? next,
   });

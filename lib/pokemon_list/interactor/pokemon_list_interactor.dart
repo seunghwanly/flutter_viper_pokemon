@@ -4,7 +4,9 @@ import 'package:flutter_viper_pokemon/pokemon_list/repository/pokemon_list_repos
 import 'package:flutter_viper_pokemon/util.dart';
 
 abstract class PokemonListInteractor {
-  /// 포켓몬 리스트 불러오기
+  /// - $1: [List<PokemonEntity>] data
+  /// - $2: [String?] previous
+  /// - $3: [String?] next
   Future<(List<PokemonEntity>, String?, String?)> getPokemons({
     String? next,
   });
