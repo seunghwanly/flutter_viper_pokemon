@@ -2,7 +2,7 @@ a simple Flutter app used [VIPER](https://medium.com/@pinarkocak/understanding-v
 
 <img src="https://img.shields.io/badge/Flutter%20-%2302569B.svg?&style=for-the-badge&logo=Flutter&logoColor=white" />
 
-## Purpose
+# Purpose
 
 Understand a VIPER architecture, separated by features.
 
@@ -38,7 +38,7 @@ stateDiagram-v2
   - Handles a navigation.
   - `BuildContext` is required for `Navigator`
 
-### Implementation
+## Implementation
 
 Used `provider` to implement the *Presenter*.
 
@@ -50,7 +50,12 @@ When linking the *View* and *Presenter* without any dependency injection like us
 
 I'd not wanted to make *View* as nullable neither non-final. By making the *View* as `final` I ended up with using `provider` to fix this issue.
 
-## Project Structure
+### Nice to have
+
+Create a *Builder* to take dependency injections and insert the Widgets to Widget Tree by each screens.
+
+
+# Project Structure
 
 ``` plain
 📦 lib
@@ -85,11 +90,11 @@ every layer has interface to communicate between each layers.
 
 > in *View*, skipped `displayData` due to `provider` provides `notifyListeners()` to handle changes.
 
-## Screenshots 📷
+# Screenshots 📷
 
 <img width="360" alt="Pokemon List Screen" src="https://github.com/seunghwanly/flutter_viper_pokemon/assets/22142225/a559bc4b-eed9-476e-bbbb-152ffefa6c4d">
 <img width="360" alt="Pokemon Detail Screen" src="https://github.com/seunghwanly/flutter_viper_pokemon/assets/22142225/28f5a728-a141-4699-98b3-74a39fbba9e4">
 
-## Nice to have
-
-Create a *Builder* to take dependency injections and insert the Widgets to Widget Tree by each screens.
+# PokéAPI
+- fetch Pokemon list: https://pokeapi.co/api/v2/pokemon
+- fetch Pokemon detail: https://pokeapi.co/api/v2/pokemon/{id_or_name}
